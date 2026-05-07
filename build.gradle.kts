@@ -4,11 +4,11 @@ plugins {
     kotlin("plugin.serialization") version "1.9.22"
 }
 
-group = "com.example"
+group = "com.mooddiary"
 version = "1.0.0-SNAPSHOT"
 
 application {
-    mainClass = "io.ktor.server.netty.EngineMain"
+    mainClass = "com.mooddiary.MainKt"
 }
 
 kotlin {

@@ -1,33 +1,126 @@
-//GET -> LISTAR PRODUCTOS
-http://localhost:8080/productos
+// ─── USUARIOS ───────────────────────────────────────────
 
-//POST -> CREAR PRODUCTO
-http://localhost:8080/productos
-
-{
-"id": 1,
-"nombre": "Laptop",
-"precio": 2500000,
-"descripcion": "Laptop gamer",
-"imagen": ""
-}
-
-//GET BY ID
-http://localhost:8080/productos/1
-
-//PUT → ACTUALIZAR
-http://localhost:8080/productos/1
+// POST → CREAR USUARIO
+POST http://localhost:8080/usuarios
+Content-Type: application/json
 
 {
 "id": 1,
-"nombre": "Laptop PRO",
-"precio": 3000000,
-"descripcion": "Actualizada",
-"imagen": ""
+"nombre": "Jana Martín",
+"email": "jana@test.com",
+"password": "1234",
+"edad": 22
 }
 
-//DELETE → ELIMINAR
+// GET → LISTAR USUARIOS
+GET http://localhost:8080/usuarios
 
-DELETE http://localhost:8080/productos/1
+// GET → OBTENER USUARIO POR ID
+GET http://localhost:8080/usuarios/1
 
-./gradlew run
+// PUT → ACTUALIZAR USUARIO
+PUT http://localhost:8080/usuarios/1
+Content-Type: application/json
+
+{
+"id": 1,
+"nombre": "Jana Martín Editada",
+"email": "jana@test.com",
+"password": "1234",
+"edad": 23
+}
+
+// DELETE → ELIMINAR USUARIO
+DELETE http://localhost:8080/usuarios/1
+
+
+// ─── LOGIN ───────────────────────────────────────────────
+
+// POST → LOGIN
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+"email": "jana@test.com",
+"password": "1234"
+}
+
+
+// ─── EMOCIONES ───────────────────────────────────────────
+
+// POST → CREAR EMOCION
+POST http://localhost:8080/emociones
+Content-Type: application/json
+
+{
+"id": 1,
+"usuarioId": 1,
+"tipo": "Feliz",
+"descripcion": "Aprobé mi examen",
+"fecha": "Hoy"
+}
+
+// GET → LISTAR TODAS LAS EMOCIONES
+GET http://localhost:8080/emociones
+
+// GET → EMOCIONES DE UN USUARIO
+GET http://localhost:8080/emociones/usuario/1
+
+// GET → OBTENER EMOCION POR ID
+GET http://localhost:8080/emociones/1
+
+// PUT → ACTUALIZAR EMOCION
+PUT http://localhost:8080/emociones/1
+Content-Type: application/json
+
+{
+"id": 1,
+"usuarioId": 1,
+"tipo": "Triste",
+"descripcion": "Descripción actualizada",
+"fecha": "Hoy"
+}
+
+// DELETE → ELIMINAR EMOCION
+DELETE http://localhost:8080/emociones/1
+
+
+// ─── METAS ───────────────────────────────────────────────
+
+// POST → CREAR META
+POST http://localhost:8080/metas
+Content-Type: application/json
+
+{
+"id": 1,
+"usuarioId": 1,
+"nombre": "Reducir ansiedad",
+"completada": false
+}
+
+// GET → LISTAR TODAS LAS METAS
+GET http://localhost:8080/metas
+
+// GET → METAS DE UN USUARIO
+GET http://localhost:8080/metas/usuario/1
+
+// GET → OBTENER META POR ID
+GET http://localhost:8080/metas/1
+
+// PUT → COMPLETAR / ACTUALIZAR META
+PUT http://localhost:8080/metas/1
+Content-Type: application/json
+
+{
+"id": 1,
+"usuarioId": 1,
+"nombre": "Reducir ansiedad",
+"completada": true
+}
+
+// DELETE → ELIMINAR META
+DELETE http://localhost:8080/metas/1
+
+
+// ─── CORRER SERVIDOR ─────────────────────────────────────
+// ./gradlew run

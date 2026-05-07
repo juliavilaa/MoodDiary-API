@@ -1,4 +1,4 @@
-rootProject.name = "TiendaMaria"
+rootProject.name = "MoodDiary"
 
 pluginManagement {
     repositories {
