@@ -1,7 +1,7 @@
 // ─── USUARIOS ───────────────────────────────────────────
 
 // POST → CREAR USUARIO
-POST http://localhost:8080/usuarios
+POST http://localhost:8 080/usuarios
 Content-Type: application/json
 
 {
